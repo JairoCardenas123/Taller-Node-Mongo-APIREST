@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import conectarDB from "./config/config.js";
 import CategoriaRouter from "./routes/categorias.routes.js";
 import productosRouter from "./routes/productos.routes.js";
+import EmpleadoRouter from "./routes/empleado.routes.js"
 
 dotenv.config();
 
@@ -13,6 +14,7 @@ app.use(express.json());
 
 app.use("/categoria",CategoriaRouter);
 app.use("/producto", productosRouter);
+app.use("/empleado",EmpleadoRouter)
 
 conectarDB()
   .then(() => {
